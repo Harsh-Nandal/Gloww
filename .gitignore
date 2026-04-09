@@ -34,3 +34,80 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# =========================
+# Dependencies
+# =========================
+node_modules/
+.pnp
+.pnp.js
+
+# =========================
+# Next.js build
+# =========================
+.next/
+out/
+build/
+
+# =========================
+# Production
+# =========================
+dist/
+coverage/
+
+# =========================
+# Environment files (IMPORTANT)
+# =========================
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# MongoDB / Local DB files
+# =========================
+*.log
+*.sqlite
+*.db
+
+# =========================
+# Uploads / Static files (optional)
+# =========================
+uploads/
+public/uploads/
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+next-env.d.ts
+
+# =========================
+# Misc
+# =========================
+.cache/
+.temp/
+.vercel/
