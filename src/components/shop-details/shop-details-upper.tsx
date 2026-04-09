@@ -5,10 +5,11 @@ import ShopDetailsBox from "./shop-details-box";
 // prop type
 type IProps = {
   product: any;
+  navStyle?: boolean;
 };
 
-const ShopDetailsUpper = ({ product }: IProps) => {
-  
+const ShopDetailsUpper = ({ product, navStyle = false }: IProps) => {
+
   // ✅ NORMALIZE PRODUCT (FINAL SAFE VERSION)
   const normalizedProduct = {
     _id: String(product?._id || product?.id || ""), // 🔥 always string
@@ -30,8 +31,11 @@ const ShopDetailsUpper = ({ product }: IProps) => {
   const { name, brand, reviews, _id } = normalizedProduct;
 
   return (
-    <div className="tpdetails__product mb-30">
-
+    <div
+      className={`tpdetails__product mb-30 ${
+        navStyle ? "tpdetails__product-nav" : ""
+      }`}
+    >
       {/* TITLE */}
       <div className="tpdetails__title-box">
         <h3 className="tpdetails__title">{name}</h3>
@@ -61,7 +65,7 @@ const ShopDetailsUpper = ({ product }: IProps) => {
         </ul>
       </div>
 
-      {/* ✅ FIXED (NO EXTRA PROPS) */}
+      {/* DETAILS BOX */}
       <ShopDetailsBox product={normalizedProduct} />
     </div>
   );

@@ -23,6 +23,6 @@
       "@/assets/*": ["./public/assets/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/checkout/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/checkout/page.tsx", "src/app/api/coupons/validate/route.js", "src/components/form/login-form.jsx", "src/components/checkout/checkout-area.jsx", "src/components/checkout/checkout-area.jsx", "src/components/product/home/all-products.jsx", "src/app/home-2/page.jsx", "src/components/shop-details/shop-details-area.jsx"],
   "exclude": ["node_modules"]
 }

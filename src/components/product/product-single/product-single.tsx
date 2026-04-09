@@ -86,8 +86,7 @@ const ProductSingle = ({
   }, [cart_products, compare_products, wishlist, id]);
 
   const handleProductModal = (prd: any) => {
-    dispatch(handleModalProduct({ product: prd }));
-    dispatch(handleOpenModal());
+    dispatch(handleModalProduct(prd)); // ✅ FIXED
   };
 
   return (
@@ -168,9 +167,9 @@ const ProductSingle = ({
 
       {/* HOVER */}
       <div className="tpproduct__hover-text" style={{
-        
+
         bottom: "-10px", // ✅ NO NEGATIVE VALUE
-        
+
       }}>
         <div className="tpproduct__hover-btn d-flex justify-content-center mb-10">
           {isItemAddToCart ? (

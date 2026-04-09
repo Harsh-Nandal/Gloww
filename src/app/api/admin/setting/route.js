@@ -1,6 +1,6 @@
 import { connectDB } from "@/lib/mongodb";
 import Settings from "@/models/Settings";
-import cloudinary from "@/config/cloudinary";
+import cloudinary from "@/lib/cloudinary";
 
 // 🔹 GET
 export async function GET() {

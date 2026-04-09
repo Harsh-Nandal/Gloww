@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0; // extra safe
+
 import { connectDB } from "@/lib/mongodb";
 import Order from "@/models/Order";
 

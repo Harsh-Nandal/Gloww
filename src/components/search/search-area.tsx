@@ -24,7 +24,7 @@ const SearchArea = () => {
   ]);
   const [activeTab, setActiveTab] = useState(col_tabs[0].title);
   const pagination_per_page = activeTab === "four-col" ? 12 : 9;
-  const {currentItems,handlePageClick,pageCount} = usePagination<IProductData>(productItems, pagination_per_page);
+  const { currentItems, handlePageClick, pageCount } = usePagination<IProductData>(productItems, pagination_per_page);
 
   // handle active tab
   function handleActiveTab(tab: string) {
@@ -51,7 +51,7 @@ const SearchArea = () => {
       product_data.filter((item) => categoryMatch(item) && titleMatch(item))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category,searchText]);
+  }, [category, searchText]);
 
   const handleSorting = (item: { value: string; label: string }) => {
     if (item.value === "new") {
@@ -66,7 +66,7 @@ const SearchArea = () => {
   };
 
   return (
-   <section className="shop-area-start grey-bg pb-200">
+    <section className="shop-area-start grey-bg pb-200">
       <div className="container">
         <div className="row">
           <div className="col-xl-12 col-lg-12 col-md-12">
@@ -119,7 +119,6 @@ const SearchArea = () => {
               </div>
               {/* shop items start */}
               <ShopItems
-                products={currentItems}
                 activeTab={activeTab}
                 currentItems={currentItems}
               />

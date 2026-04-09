@@ -24,7 +24,7 @@ export const utility = createSlice({
     },
 
     // ✅ OPEN MODAL (WITHOUT PRODUCT CHANGE)
-    openModal: (state) => {
+    handleOpenModal: (state) => {
       state.isShow = true;
     },
 
@@ -43,7 +43,7 @@ export const utility = createSlice({
 
 export const {
   handleModalProduct,
-  openModal,
+  handleOpenModal,
   closeModal,
   toggleModal,
 } = utility.actions;

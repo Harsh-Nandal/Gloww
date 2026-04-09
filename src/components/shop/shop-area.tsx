@@ -23,7 +23,7 @@ type IProps = {
   shop_right?: boolean;
 };
 
-const ShopArea = ({category_style=false,shop_right=false}: IProps) => {
+const ShopArea = ({ category_style = false, shop_right = false }: IProps) => {
   const { products, setProducts, handleSorting } = useProductFilter();
   const [activeTab, setActiveTab] = useState(col_tabs[0].title);
   const pagination_per_page = activeTab === "four-col" ? 12 : 9;
@@ -38,16 +38,16 @@ const ShopArea = ({category_style=false,shop_right=false}: IProps) => {
   return (
     <section className="shop-area-start grey-bg pb-200">
       <div className="container">
-        <div className={`row ${shop_right?"row-reverse":""}`}>
-          <div className={`col-xl-2 col-lg-12 col-md-12 ${shop_right?"order-2":""}`}>
+        <div className={`row ${shop_right ? "row-reverse" : ""}`}>
+          <div className={`col-xl-2 col-lg-12 col-md-12 ${shop_right ? "order-2" : ""}`}>
             <ShopSidebar shop_right={shop_right} />
           </div>
           <div className="col-xl-10 col-lg-12 col-md-12">
-            <div className={`tpshop__top ${shop_right?"tpshop__sidebar-area mr-60":"ml-60"}`}>
+            <div className={`tpshop__top ${shop_right ? "tpshop__sidebar-area mr-60" : "ml-60"}`}>
               {!category_style && (
                 <div
                   className="tpshop__banner mb-30"
-                  style={{backgroundImage: "url(/assets/img/banner/shop-bg-1.jpg)"}}
+                  style={{ backgroundImage: "url(/assets/img/banner/shop-bg-1.jpg)" }}
                 >
                   <div className="tpshop__content text-center">
                     <span>The Salad</span>
@@ -81,9 +81,8 @@ const ShopArea = ({category_style=false,shop_right=false}: IProps) => {
                           {col_tabs.map((tab, index) => (
                             <button
                               key={index}
-                              className={`nav-link ${
-                                activeTab === tab.title ? "active" : ""
-                              }`}
+                              className={`nav-link ${activeTab === tab.title ? "active" : ""
+                                }`}
                               onClick={() => handleActiveTab(tab.title)}
                             >
                               <i>{tab.icon}</i>
@@ -115,7 +114,6 @@ const ShopArea = ({category_style=false,shop_right=false}: IProps) => {
 
               {/* shop items start */}
               <ShopItems
-                products={currentItems}
                 activeTab={activeTab}
                 currentItems={currentItems}
               />
