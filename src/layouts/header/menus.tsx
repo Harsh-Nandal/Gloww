@@ -34,6 +34,11 @@ const Menus = () => {
             Blog
           </Link>
         </li>
+        <li>
+          <Link href="/faq" className="menu-link">
+            Faq
+          </Link>
+        </li>
 
         {/* CONTACT */}
         <li>

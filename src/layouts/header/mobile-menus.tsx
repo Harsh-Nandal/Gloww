@@ -5,88 +5,84 @@ import Image from "next/image";
 import { mobile_menus } from "@/data/menu-data";
 
 const MobileMenus = () => {
-  const [navTitle, setNavTitle] = useState("");
-  //openMobileMenu
-  const openMobileMenu = (menu: string) => {
-    if (navTitle === menu) {
-      setNavTitle("");
-    } else {
-      setNavTitle(menu);
-    }
+  const [navTitle, setNavTitle] = useState<string | null>(null);
+
+  const toggleMenu = (menu: string) => {
+    setNavTitle((prev) => (prev === menu ? null : menu));
   };
+
   return (
-    <ul>
-      {mobile_menus.map((menu) => (
-        <li
-          key={menu.id}
-          className={`${menu.has_dropdown ? "has-dropdown" : ""} ${
-            menu.home_menus ? "has-homemenu" : ""
-          }`}
-        >
-          <Link href={menu.link}>{menu.name}</Link>
-          {menu.home_menus ? (
-            <>
+    <ul className="mobile-menu-list">
+      {mobile_menus?.map((menu) => {
+        const isOpen = navTitle === menu.name;
+
+        return (
+          <li
+            key={menu.id}
+            className={`${menu?.has_dropdown ? "has-dropdown" : ""} ${
+              menu?.home_menus ? "has-homemenu" : ""
+            } ${isOpen ? "active" : ""}`}
+          >
+            {/* MAIN LINK */}
+            <div className="menu-item">
+              <Link href={menu.link}>{menu.name}</Link>
+
+              {(menu?.home_menus || menu?.dropdown_menus) && (
+                <button
+                  onClick={() => toggleMenu(menu.name)}
+                  className={`mean-expand ${isOpen ? "mean-clicked" : ""}`}
+                  aria-label="Toggle Menu"
+                >
+                  <i
+                    className={`fal ${
+                      isOpen ? "fa-minus" : "fa-plus"
+                    }`}
+                  ></i>
+                </button>
+              )}
+            </div>
+
+            {/* HOME MENUS */}
+            {menu?.home_menus && (
               <ul
                 className="sub-menu home-menu-style"
-                style={{
-                  display: navTitle === menu.name ? "block" : "none",
-                }}
+                style={{ display: isOpen ? "block" : "none" }}
               >
                 {menu.home_menus.map((home_menu, i) => (
                   <li key={i}>
                     <Link href={home_menu.link}>
                       <Image
                         src={home_menu.img}
-                        alt="home-img"
+                        alt={home_menu.title || "menu-image"}
                         width={208}
                         height={219}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                        }}
+                        style={{ width: "100%", height: "auto" }}
                       />
-                      {home_menu.title}
+                      <span>{home_menu.title}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
-              <a
-                className={`mean-expand ${
-                  navTitle === menu.name ? "mean-clicked" : ""
-                }`}
-                onClick={() => openMobileMenu(menu.name)}
-                style={{ fontSize: "18px", cursor: "pointer" }}
-              >
-                <i className="fal fa-plus"></i>
-              </a>
-            </>
-          ) : menu.dropdown_menus ? (
-            <>
+            )}
+
+            {/* DROPDOWN MENUS */}
+            {menu?.dropdown_menus && (
               <ul
                 className="sub-menu"
-                style={{
-                  display: navTitle === menu.name ? "block" : "none",
-                }}
+                style={{ display: isOpen ? "block" : "none" }}
               >
                 {menu.dropdown_menus.map((dropdown_menu, i) => (
                   <li key={i}>
-                    <Link href={dropdown_menu.link}>{dropdown_menu.title}</Link>
+                    <Link href={dropdown_menu.link}>
+                      {dropdown_menu.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
-              <a
-                className={`mean-expand ${
-                  navTitle === menu.name ? "mean-clicked" : ""
-                }`}
-                onClick={() => openMobileMenu(menu.name)}
-                style={{ fontSize: "18px", cursor: "pointer" }}
-              >
-                <i className="fal fa-plus"></i>
-              </a>
-            </>
-          ) : null}
-        </li>
-      ))}
+            )}
+          </li>
+        );
+      })}
     </ul>
   );
 };

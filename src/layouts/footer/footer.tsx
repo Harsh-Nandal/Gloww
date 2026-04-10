@@ -19,7 +19,7 @@ const Footer = ({style_2=false}:IProps) => {
                    <div className="tpfooter__widget footer-col-1 mb-50">
                       <h4 className="tpfooter__widget-title">Let Us Help You</h4>
                       <p>If you have any question, please <br/> contact us at: 
-                         <a href="mailto:support@example.com">support@example.com</a>
+                         <a href="mailto:support@gloww.com">support@gloww.com</a>
                       </p>
                       <div className="tpfooter__widget-social mt-45">
                          <span className="tpfooter__widget-social-title mb-5">Social Media:</span>
@@ -33,8 +33,8 @@ const Footer = ({style_2=false}:IProps) => {
                 </div>
                 <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                    <div className="tpfooter__widget footer-col-2 mb-50">
-                      <h4 className="tpfooter__widget-title">Looking for Orfarm?</h4>
-                      <p>68 St. Vicent Place, Glasgow, Greater <br/> Newyork NH2012, UK.</p>
+                      <h4 className="tpfooter__widget-title">About Gloww</h4>
+                      <p>68 St. Vicent Place, Glasgow, Greater <br/> Rohtak 124001, Haryana.</p>
                       <div className="tpfooter__widget-time-info mt-35">
                          <span>Monday – Friday: <b>8:10 AM – 6:10 PM</b></span>
                          <span>Saturday: <b>10:10 AM – 06:10 PM</b></span>
@@ -47,11 +47,11 @@ const Footer = ({style_2=false}:IProps) => {
                       <h4 className="tpfooter__widget-title">HOT CATEGORIES</h4>
                       <div className="tpfooter__widget-links">
                          <ul>
-                            <li><a href="#">Fruits & Vegetables</a></li>
-                            <li><a href="#">Dairy Products</a></li>
-                            <li><a href="#">Package Foods</a></li>
-                            <li><a href="#">Beverage</a></li>
-                            <li><a href="#">Health & Wellness</a></li>
+                            <li><a href="#">Shilajit</a></li>
+                            <li><a href="#">Ashwagandha</a></li>
+                            <li><a href="#">Tribulus Terrestris</a></li>
+                            <li><a href="#">Maca Root</a></li>
+                            <li><a href="#">Ginseng</a></li>
                          </ul>
                       </div>
                    </div>
@@ -60,7 +60,7 @@ const Footer = ({style_2=false}:IProps) => {
                    <div className="tpfooter__widget footer-col-4 mb-50">
                       <h4 className="tpfooter__widget-title">Our newsletter</h4>
                       <div className="tpfooter__widget-newsletter">
-                         <p>Subscribe to the Orfarm mailing list to receive updates <br/> on new arrivals & other information.</p>
+                         <p>Subscribe to the Gloww mailing list to receive updates <br/> on new arrivals & other information.</p>
                          <form>
                             <span>
                               <i>
@@ -89,7 +89,7 @@ const Footer = ({style_2=false}:IProps) => {
              <div className="row">
                 <div className="col-lg-6 col-md-7 col-sm-12">
                    <div className="tpfooter__copyright">
-                      <span className="tpfooter__copyright-text">Copyright © <a href="#">ORFARM</a> all rights reserved. Powered by <a href="#">ThemePure</a>.</span>
+                      <span className="tpfooter__copyright-text">Copyright © <a href="#">Gloww</a> all rights reserved. </span>
                    </div>
                 </div>
                 <div className="col-lg-6 col-md-5 col-sm-12">
